@@ -17,5 +17,11 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/', [WelcomeController::class, 'index']);
-Route::get('/show', [WelcomeController::class, 'show']);
+Route::get('/', [WelcomeController::class, 'login']);
+Route::get('/register', [WelcomeController::class, 'register']);
+Route::get('/forms', [WelcomeController::class, 'forms']);
+Route::get('/env', [WelcomeController::class, 'env']);
+Route::get('/dashboard', [WelcomeController::class, 'dashboard']);
+Route::get('/migration', [WelcomeController::class, 'migration']);
+Route::get('/package', [WelcomeController::class, 'package']);
+
