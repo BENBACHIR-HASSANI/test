@@ -24,4 +24,5 @@ Route::get('/env', [WelcomeController::class, 'env']);
 Route::get('/dashboard', [WelcomeController::class, 'dashboard']);
 Route::get('/migration', [WelcomeController::class, 'migration']);
 Route::get('/package', [WelcomeController::class, 'package']);
+Route::get('/page', [WelcomeController::class, 'pagedev']);
 

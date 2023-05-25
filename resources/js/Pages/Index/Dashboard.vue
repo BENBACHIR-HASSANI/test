@@ -5,8 +5,7 @@ import { Link } from "@inertiajs/vue3";
 <template>
  <div class="flex flex-col space-y-6 md:space-y-0 md:flex-row justify-between">
           <div class="mr-6">
-            <h1 class="text-4xl font-semibold mb-2">Dashboard</h1>
-            <h2 class="text-gray-600 ml-0.5">Mobile UX/UI Design course</h2>
+            <h1 class="text-4xl font-semibold mb-2"> Harp Dashboard</h1>
           </div>
 
         </div>

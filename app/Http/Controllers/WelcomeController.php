@@ -49,4 +49,11 @@ class WelcomeController extends Controller
         return inertia('Auth/register');
 
     }
+    ///dev
+    public function pagedev(){
+        
+        return inertia('Dev/Index');
+
+    }
+
 }
