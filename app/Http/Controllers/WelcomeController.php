@@ -3,9 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
 
 class WelcomeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth.inertia')->except(['login', 'register']);
+        $this->middleware('auth');
+    }
     public function dashboard(){
         
 
@@ -49,8 +56,13 @@ class WelcomeController extends Controller
         return inertia('Index/Package');
 
     }
-  
+
     //////Autenhtification
+
+    public function forgotPassword()
+    {
+        return inertia('Auth/forgotPassword');
+    }
     public function login(){
         
 

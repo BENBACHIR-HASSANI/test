@@ -16,8 +16,8 @@ import { Link } from "@inertiajs/vue3";
                 <div >
                     
                     <!-- <Link :href="route('env.create')" class="bg-purple-600 hover:bg-purple-700 text-white font-medium p-2 rounded-md"
-                        >+ New package</Link>
-                </div> -->
+                        >+ New package</Link> -->
+               
           <Link :href="route('forms')" class="bg-purple-600 hover:bg-purple-700 text-white font-medium p-2 rounded-md"
                         >+ New package</Link>
                 </div>

@@ -20,6 +20,14 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        \App\Models\User::factory()->create([
+            'name' => 'Jean Marc',
+            'first_name' => 'Jean',
+            'trigramme_user' => '123456',
+            'email' => 'jean.marc@dxc.com',
+            'stat_id' => 'GBERGKEG',
+            // 'password' => Hash::make('john.12345'),
+        ]);
        
         $this->call([
             Env_sourceTableSeeder::class,

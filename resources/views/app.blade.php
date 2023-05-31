@@ -6,13 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>HARP DASHBOARD</title>
+
     @routes
     @vite('resources/js/app.js')
     @inertiaHead
 </head>
 
-<body class ="bg-white dar:bg-gray-900">
-    @inertia
+<body class="bg-white white:bg-gray-900 text-gray-800 dark:text-gray-300">
+        @inertia
 </body>
+<script src="{{ mix('/js/app.js') }}"></script>
+
+
+
 
 </html>

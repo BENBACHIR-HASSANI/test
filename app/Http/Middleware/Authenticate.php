@@ -2,20 +2,47 @@
 
 namespace App\Http\Middleware;
 
-use Illuminate\Auth\Middleware\Authenticate as Middleware;
+use Closure;
+use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Http\Request;
+use Inertia\Inertia;
+use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Auth;
 
-class Authenticate extends Middleware
+
+class Authenticate
 {
     /**
-     * Get the path the user should be redirected to when they are not authenticated.
+     * The Guard implementation.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return string|null
+     * @var Guard
      */
-    protected function redirectTo($request)
+    protected $auth;
+
+    /**
+     * Create a new middleware instance.
+     *
+     * @param  Guard  $auth
+     * @return void
+     */
+    public function __construct(Guard $auth)
     {
-        if (! $request->expectsJson()) {
-            return route('login');
+        $this->auth = $auth;
+    }
+
+    /**
+     * Handle an incoming request.
+     *
+     * @param  Request  $request
+     * @param  Closure  $next
+     * @return Response
+     */
+    public function handle(Request $request, Closure $next)
+    {
+        if ($this->auth->check()) {
+            return $next($request);
         }
+
+        return inertia('Auth/login');
     }
 }
