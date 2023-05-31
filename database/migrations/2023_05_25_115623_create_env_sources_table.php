@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('env_sources', function (Blueprint $table) {
-            $table->string('name');;
+            $table->string('name');
         });
     }
 

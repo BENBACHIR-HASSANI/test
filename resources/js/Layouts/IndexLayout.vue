@@ -4,18 +4,55 @@ import Sider from "../composants/Sider.vue";
 import Header from "../composants/Header.vue";
 </script>
 <template>
-    <div class="flex bg-gray-100 min-h-screen">
-    <!-- <body class="flex bg-gray-100 min-h-screen"> -->
-        <!-- sider -->
-  <Sider></Sider>
-    <div class="flex-grow text-gray-800">
-    <!-- <div class=" container flex-grow text-gray-800"> -->
-        <!-- header -->
-      <Header></Header>
-      <!-- contenue -->
-      <main class="p-6 sm:p-10 space-y-6">
-        <slot>Default</slot>
-      </main>
+    
+<!-- 
+<aside class="fixed left-0 top-0 z-10 h-screen w-[calc(3.73rem)] border-r border-gray-300/40 bg-white dark:bg-gray-900 dark:border-gray-700 hover:w-56 hover:shadow-2xl">
+    
+<div class="flex flex-col justify-between">
+
+</div>
+<div class="h-16 border-b border-gray-300 flex items-center">
+    
+</div>
+
+</aside>
+
+
+<main class="w-[calc(100%-3.73rem)] ml-auto">
+    <div class="2xl:container mx-auto space-y-6">
+        <div class="h-16 border-b border-gray-300/40 dark:border-gray-700">
+
+        </div>
+
+   
+    <div class="px-4 lg:px-12">
+    <div class="h-96 flex justify-center items-center rounded-2xl border border-dashed border-gray-300/40 dark:border-gray-700">
+        <span class="text-gray-500 dark:text-gray-200">Content</span>
     </div>
-  </div>
-  </template>
+    </div>
+</div>
+    <slot>Default</slot>
+
+</main> -->
+<div class=" flex min-h-screen bg-gray-100">
+
+ 
+       
+        <!-- sider -->
+        <Sider></Sider>
+        <div class="w-full h-full flex flex-col justify-between">
+           
+            <!-- header -->
+            <Header></Header>
+            <!-- contain -->
+            <main class="max-w-full h-full flex relative overflow-y-hidden">
+      <!-- Container -->
+            <div class="h-full w-full m-12  flex flex-wrap items-start justify-start rounded-tl grid-flow-col auto-cols-max gap-4 ">
+        <!-- Container -->
+                <slot>Default</slot>
+                </div>
+            </main>
+        </div>
+
+    </div>
+</template>

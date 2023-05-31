@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\Env_sourceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,10 +20,11 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::get('/', [WelcomeController::class, 'login']);
 Route::get('/register', [WelcomeController::class, 'register']);
-Route::get('/forms', [WelcomeController::class, 'forms']);
-Route::get('/env', [WelcomeController::class, 'env']);
-Route::get('/dashboard', [WelcomeController::class, 'dashboard']);
-Route::get('/migration', [WelcomeController::class, 'migration']);
-Route::get('/package', [WelcomeController::class, 'package']);
-Route::get('/page', [WelcomeController::class, 'pagedev']);
-
+Route::get('/environement', [WelcomeController::class, 'environement'])->name('environement');
+Route::get('/test', [WelcomeController::class, 'test'])->name('test');
+Route::get('/user', [WelcomeController::class, 'user'])->name('user');
+Route::get('/forms', [WelcomeController::class, 'forms'])->name('forms');
+Route::get('/dashboard', [WelcomeController::class, 'dashboard'])->name('dashboard');
+Route::get('/migration', [WelcomeController::class, 'migration'])->name('migration');
+Route::get('/package', [WelcomeController::class, 'package'])->name('package');
+Route::resource('env', Env_sourceController::class)->only(['index', 'create', 'store']);

@@ -6,16 +6,35 @@ use Illuminate\Http\Request;
 
 class WelcomeController extends Controller
 {
-    public function Dashboard(){
+    public function dashboard(){
         
 
         return inertia('Index/Dashboard');
 
     }
-    public function env(){
+    public function forms(){
+        
+
+        return inertia('Index/Forms');
+
+    }
+    public function environement(){
         
 
         return inertia('Index/Env');
+
+    }
+
+    public function test(){
+        
+
+        return inertia('Index/Test');
+
+    }
+    public function user(){
+        
+
+        return inertia('Index/User');
 
     }
     public function migration(){
@@ -30,12 +49,7 @@ class WelcomeController extends Controller
         return inertia('Index/Package');
 
     }
-    public function forms(){
-        
-
-        return inertia('Index/forms');
-
-    }
+  
     //////Autenhtification
     public function login(){
         
@@ -49,11 +63,6 @@ class WelcomeController extends Controller
         return inertia('Auth/register');
 
     }
-    ///dev
-    public function pagedev(){
-        
-        return inertia('Dev/Index');
-
-    }
+  
 
 }
