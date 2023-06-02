@@ -15,7 +15,7 @@ class AuthController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth.inertia')->except(['login', 'register']);
+        $this->middleware('auth.inertia')->except(['login', 'login.store', 'forgot-password']);
     }
     public function create()
     {
@@ -36,7 +36,7 @@ class AuthController extends Controller
 
 
         $request->session()->regenerate();
-        return redirect()->intended('/dashboard');
+        return redirect()->intended('/dashboard')->with('message', 'Administrator logged in successfully');
 
         // return inertia('index/dashboard');
     }
@@ -44,6 +44,7 @@ class AuthController extends Controller
     public function destroy()
     {
         Auth::logout();
-        return Inertia::location("login");
+        return Inertia::location(route('login'));
+
     }
 }
