@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Middleware;
 
-class HandleInertiaRequest extends Middleware
+class HandleInertiaRequests extends Middleware
 {
     /**
      * The root template that's loaded on the first page visit.
@@ -42,7 +42,7 @@ class HandleInertiaRequest extends Middleware
         return array_merge(parent::share($request), [
             'flash' => [
                 'message' => session('message'),
-                'success' => $request->session()->get('success')
+                // 'success' => $request->session()->get('success')
             ],
             'user' => $request->user() ? [
                 'id' => $request->user()->id,

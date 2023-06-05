@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StorePostRequest;
-use App\Models\User;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,10 +11,10 @@ use Inertia\Inertia;
 class AuthController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth.inertia')->except(['login', 'login.store', 'forgot-password']);
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth.inertia')->except(['login', 'login.store', 'forgot-password']);
+    // }
     public function create()
     {
         return inertia('Auth/login');
@@ -32,11 +30,10 @@ class AuthController extends Controller
                 'email' => 'Authentication failed',
             ]);
         }
-        $user = Auth::user(); // Get the authenticated user
-
 
         $request->session()->regenerate();
-        return redirect()->intended('/dashboard')->with('message', 'Administrator logged in successfully');
+        return redirect()->intended('/dashboard');
+        // ->with('message', 'Administrator logged in successfully');
 
         // return inertia('index/dashboard');
     }

@@ -49,7 +49,7 @@ import Header from "../composants/Header.vue";
       <!-- Container -->
             <div class="h-full w-full m-12  flex flex-wrap items-start justify-start rounded-tl grid-flow-col auto-cols-max gap-4 ">
         <!-- Container -->
-            <div class="fixed top-12 right-10 m-6" v-if="$page.props.flash.message">
+            <!-- <div class="fixed top-12 right-10 m-6" v-if="$page.props.flash.message">
                 <div :class="'bg-green-200 text-green-900 rounded-lg shadow-md p-6 pr-10'" style="min-width: 240px">
                     <button class="opacity-75 cursor-pointer absolute top-0 right-0 py-2 px-3 hover:opacity-100">
                         ×
@@ -58,7 +58,7 @@ import Header from "../composants/Header.vue";
                         {{ $page.props.flash.message }}
                     </div>
                 </div>
-            </div>
+            </div> -->
                 <slot>Default</slot>
                 </div>
             </main>
