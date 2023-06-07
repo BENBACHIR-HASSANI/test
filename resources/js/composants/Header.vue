@@ -12,7 +12,7 @@ import {  Link } from "@inertiajs/vue3";
         <!-- user name-->
    
        
-          <div class="text-md font-medium ">Unknow Unknow</div>
+          <div class="text-md font-medium " v-if="$page.props.user.name">{{ $page.props.user.name }}</div>
           
          
          

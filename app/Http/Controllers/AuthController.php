@@ -32,7 +32,8 @@ class AuthController extends Controller
         }
 
         $request->session()->regenerate();
-        return redirect()->intended('/dashboard');
+        return redirect()->intended('/dashboard')
+        ->with('success', 'Administrator is Logged in successfully!');
         // ->with('message', 'Administrator logged in successfully');
 
         // return inertia('index/dashboard');

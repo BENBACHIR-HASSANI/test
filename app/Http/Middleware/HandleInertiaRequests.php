@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Middleware;
 
+
 class HandleInertiaRequests extends Middleware
 {
     /**
@@ -36,13 +37,12 @@ class HandleInertiaRequests extends Middleware
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-
     public function share(Request $request): array
     {
         return array_merge(parent::share($request), [
             'flash' => [
-                'message' => session('message'),
-                // 'success' => $request->session()->get('success')
+                // 'message' => session('message'),
+                'success' => $request->session()->get('success')
             ],
             'user' => $request->user() ? [
                 'id' => $request->user()->id,
@@ -56,13 +56,13 @@ class HandleInertiaRequests extends Middleware
         ]);
     }
 
-    public function handle(Request $request, Closure $next)
-    {
-        if (!Auth::check()) {
-            // Redirect to the login page
-            return redirect()->route('login');
-        }
+    // public function handle(Request $request, Closure $next)
+    // {
+    //     if (!Auth::check()) {
+    //         // Redirect to the login page
+    //         return redirect()->route('login');
+    //     }
 
-        return parent::handle($request, $next);
-    }
+    //     return parent::handle($request, $next);
+    // }
 }
