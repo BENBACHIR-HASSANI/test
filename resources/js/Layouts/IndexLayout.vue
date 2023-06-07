@@ -1,9 +1,8 @@
 <script setup>
-import { Link, usePage } from "@inertiajs/vue3";
+import { Link } from "@inertiajs/vue3";
 import Sider from "../composants/Sider.vue";
 import Header from "../composants/Header.vue";
 
-const page = usePage;
 
 </script>
 <template>
