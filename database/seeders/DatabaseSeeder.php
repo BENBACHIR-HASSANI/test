@@ -34,6 +34,8 @@ class DatabaseSeeder extends Seeder
        
         $this->call([
             Env_sourceTableSeeder::class,
+            TypeTableSeeder::class,
+            VersionTableSeeder::class,
         ]);
     }
 }

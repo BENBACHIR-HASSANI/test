@@ -12,10 +12,10 @@
     @inertiaHead
 </head>
 
-<body class="bg-white white:bg-gray-900 text-gray-800 dark:text-gray-300">
+<body >
         @inertia
 </body>
-<script src="{{ mix('/js/app.js') }}"></script>
+<!-- <script src="{{ mix('/js/app.js') }}"></script> -->
 
 
 

@@ -14,84 +14,99 @@ class Env_sourceController extends Controller
      * @return \Illuminate\Http\Response
      */
      // retourne la liste des env_source
-    public function index()
-    {
-        // dd(Env_source::all());
-        return inertia(
-            'Dev/Index',
-            ['env_source' => Env_source::all()]
-        );
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-        return inertia('Dev/Create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        // dd($request->all());
+     public function index()
+     {
+         return inertia(
+             'Environement/Index',
+             [
+                 'env_source' => Env_source::all()
+ 
+ 
+ 
+             ]
+         );
+     }
+ 
+     /**
+      * Show the form for creating a new resource.
+      *
+      * @return \Illuminate\Http\Response
+      */
+     public function create()
+     {
+         //
+         return inertia('Environement/Create');
+     }
+ 
+     /**
+      * Store a newly created resource in storage.
+      *
+      * @param  \Illuminate\Http\Request  $request
+      * @return \Illuminate\Http\Response
+      */
+     public function store(Request $request)
+     {
+ 
         Env_source::create($request->validate([
-            'name'=>'required']));
-
-        return redirect()->route('env.index');
-    
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-}
+ 
+             
+             'name' => 'required',
+         ]));
+         // env_source::create($request->all());
+ 
+         return redirect()->route('env_source.index')->with('success', 'env_source was created');
+     }
+ 
+     /**
+      * Display the specified resource.
+      *
+      * @param  int  $id
+      * @return \Illuminate\Http\Response
+      */
+     public function show(Env_source $env_source)
+     {
+         return inertia(
+             'Environement/Show',
+             [
+                 'env_source' => $env_source
+ 
+ 
+             ]
+         );
+     }
+ 
+ 
+     public function edit(Env_source $env_source)
+     {
+         return inertia(
+             'Environement/Edit',
+             [
+                 'env_source' => $env_source
+ 
+ 
+             ]
+         );
+     }
+ 
+ 
+     public function update(Request $request, Env_source $env_source)
+     {
+         $env_source->update(
+             $request->validate([
+ 
+            
+                 'name' => 'required',
+ 
+             ])
+         );
+         return redirect()->route('env_source.index')
+             ->with('success', 'env_source was change !');
+     }
+ 
+ 
+     public function destroy(Env_source $env_source)
+     {
+         $env_source->delete();
+         return redirect()->back()->with('success', 'env_source was deleted!');
+     }
+ }

@@ -75,6 +75,12 @@ class WelcomeController extends Controller
         return inertia('Auth/register');
 
     }
-  
+  ////////////
+  public function userprofil(){
+        
+
+    return inertia('Index/UserProfil');
+
+}
 
 }

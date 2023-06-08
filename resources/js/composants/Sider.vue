@@ -102,29 +102,29 @@ import { Link } from "@inertiajs/vue3";
                                 >
                                     <li>
                                         <Link
-                                            href="#"
-                                            class="inline-block w-full px-4 py-2 text-xs rounded hover:bg-purple-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-500 focus:text-white"
+                                            :href="route('type.index')"
+                                            class="inline-block w-full px-4 py-2 text-xs rounded hover:bg-purple-600 hover:text-white focus:outline-none     "
                                             >Type</Link
                                         >
                                     </li>
                                     <li>
                                         <Link
                                             href="#"
-                                            class="inline-block w-full px-4 py-2 text-xs rounded hover:bg-purple-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-500 focus:text-white"
+                                            class="inline-block w-full px-4 py-2 text-xs rounded hover:bg-purple-600 hover:text-white focus:outline-none     "
                                             >Table</Link
                                         >
                                     </li>
                                     <li>
                                         <Link
-                                            href="#"
-                                            class="inline-block w-full px-4 py-2 text-xs rounded hover:bg-purple-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-500 focus:text-white"
+                                        :href="route('version.index')"
+                                            class="inline-block w-full px-4 py-2 text-xs rounded hover:bg-purple-600 hover:text-white focus:outline-none     "
                                             >Version</Link
                                         >
                                     </li>
                                     <li>
                                         <Link
-                                            href="#"
-                                            class="inline-block w-full px-4 py-2 text-xs rounded hover:bg-purple-800 hover:text-white focus:outline-none focus:ring-1 focus:ring-gray-500 focus:text-white"
+                                        :href="route('env_source.index')"
+                                            class="inline-block w-full px-4 py-2 text-xs rounded hover:bg-purple-600 hover:text-white focus:outline-none     "
                                             >Env Source</Link
                                         >
                                     </li>
