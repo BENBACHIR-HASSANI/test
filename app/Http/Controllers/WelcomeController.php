@@ -42,8 +42,8 @@ class WelcomeController extends Controller
         
 
         return inertia('Index/User');
-
     }
+    
     public function migration(){
         
 

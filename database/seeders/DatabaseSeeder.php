@@ -23,9 +23,12 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory()->create([
             'name' => 'Jean Marc',
             'first_name' => 'Jean',
-            'trigramme_user' => '123456',
+            'last_name' => 'Marc',
+            'trigramme_user' => 'JMC',
             'email' => 'jean.marc@dxc.com',
             'stat_id' => 'GBERGKEG',
+            'tel' => '00 33 7 67 65 67 97',
+            'role' => 'Administrator'
             // 'password' => Hash::make('john.12345'),
         ]);
        

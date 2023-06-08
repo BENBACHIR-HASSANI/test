@@ -84,5 +84,9 @@ import { Link } from "@inertiajs/vue3";
 </template>
 
 <script>
+import IndexLayout from "../../Layouts/IndexLayout.vue";
 
+export default {
+    layout: IndexLayout,
+};
 </script>

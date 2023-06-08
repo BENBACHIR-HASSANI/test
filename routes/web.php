@@ -5,6 +5,7 @@ use App\Http\Controllers\Env_sourceController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/environement', [WelcomeController::class, 'environement'])->name('environement')->middleware('auth.inertia');
     Route::get('/test', [WelcomeController::class, 'test'])->name('test')->middleware('auth.inertia');
     Route::get('/user', [WelcomeController::class, 'user'])->name('user')->middleware('auth.inertia');
+    Route::get('/NewUser', [UserController::class, 'create'])->name('create')->middleware('auth.inertia');
     Route::get('/forms', [WelcomeController::class, 'forms'])->name('forms')->middleware('auth.inertia');
     Route::get('/dashboard', [WelcomeController::class, 'dashboard'])->name('dashboard')->middleware(['auth', 'verified']);
     Route::get('/migration', [WelcomeController::class, 'migration'])->name('migration')->middleware('auth.inertia');
