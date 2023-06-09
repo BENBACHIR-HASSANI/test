@@ -19,6 +19,7 @@ class AuthController extends Controller
 
     public function store(Request $request)
     {
+        
         if (!Auth::attempt($request->validate([
             'email' => 'required|string|email',
             'password' => 'required|string'
@@ -32,6 +33,7 @@ class AuthController extends Controller
         $request->session()->regenerate();
         return redirect()->intended('/dashboard')
         ->with('success', 'Administrator is Logged in successfully!');
+        
 
     }
 

@@ -87,15 +87,15 @@ const create = () => form.post(route('user.index'));
            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-state">
            Role
          </label>
-         <input v-model="form.role" name="role" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="00 33 7 67 65 67 97">
-         <p class="text-red-400 text-xs italic mt-1" v-if="form.errors.role">{{form.errors.role}}</p>
-         <!-- <div class="relative">
-           <select v-model="form.role" name="role" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="grid-state">
-             <option>Administrator</option>
+         <div class="relative">
+           <select v-model="form.role" name="role" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="grid-state" >
+             <option value="Administrator">Administrator</option>
              <option>Integration manager</option>
              <option>Developer</option>
            </select>
-       </div> -->
+       </div>
+         <p class="text-red-400 text-xs italic mt-1" v-if="form.errors.role">{{form.errors.role}}</p>
+        
        </div>
        <div class="md:w-1/2 px-3">
          <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
