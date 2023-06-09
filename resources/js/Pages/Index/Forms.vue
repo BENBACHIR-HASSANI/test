@@ -73,7 +73,7 @@ import { Link } from "@inertiajs/vue3";
   </div>
   <button type="Submit" class=" mt-12 inline-flex px-5 py-3 text-white bg-green-600 hover:bg-green-700 focus:bg-green-700 rounded-md ml-6 mb-3">
             
-              Submit
+              Create
             </button>
   <button type="Submit" class=" mt-12 inline-flex px-5 py-3 text-white bg-purple-600 hover:bg-purple-700 focus:bg-purple-700 rounded-md ml-6 mb-3">
             

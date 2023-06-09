@@ -17,6 +17,7 @@ const form = useForm({
 const create = () => form.post(route('user.index'));
 </script>
 <template>
+  
     <div class="relative h-screen w-full bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-8">
      
        <form @submit.prevent="create">
@@ -105,8 +106,8 @@ const create = () => form.post(route('user.index'));
 
        </div>
      </div>
-     <button type="Submit" class=" mt-6 inline-flex px-5 py-3 text-white bg-green-600 hover:bg-green-700 focus:bg-green-700 rounded-md ml-6 mb-3">
-       Submit
+     <button type="Submit" class=" mt-6 inline-flex px-5 py-3 text-white bg-blue-600 hover:bg-blue-700 focus:bg-blue-700 rounded-md mb-3">
+       Create
      </button>
      <!-- <Link href="../user" class=" mt-6 inline-flex px-5 py-3 text-white bg-purple-600 hover:bg-purple-700 focus:bg-purple-700 rounded-md ml-6 mb-3">     
        Cancel

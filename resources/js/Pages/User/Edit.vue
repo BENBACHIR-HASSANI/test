@@ -115,7 +115,8 @@ const update = () => form.put(route('user.update',{user:props.user.id}));
        </div>
      </div>
      <div>
-        <button type="Submit" class=" mt-3 inline-flex px-5 py-3 text-white bg-green-600 hover:bg-green-700 focus:bg-green-700 rounded-md ml-6 mb-3">
+        <button type="Submit" class=" mt-3 inline-flex px-5 py-3 text-white bg-blue-600 hover:bg-blue-700 focus:bg-blue-700 rounded-md ml-6 mb-3"
+>
           Edit
         </button>
       </div>

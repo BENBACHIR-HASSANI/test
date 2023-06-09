@@ -155,7 +155,7 @@ defineProps({
                                     <Link :href="route('env_source.show',{env_source:env_source.id})" as="button"  class="bg-purple-600 hover:bg-indigo-500 text-white font-medium p-2 rounded-md">
                                             Show </Link>
                                    <Link :href="route('env_source.edit',{env_source:env_source.id})"  class="bg-indigo-600 mx-3 hover:bg-indigo-500 text-white font-medium p-2 rounded-md">
-                                    Edite </Link>
+                                    Edit </Link>
                                     
                                    <!-- <Link :href="`/env_source/${env_source.id}`" method="DELETE" as="button">
                                     Delete</Link> -->

@@ -14,16 +14,6 @@ const create = () => form.post(route('version.index'));
 
     <form @submit.prevent="create">
       
-        <!-- <div class="-mx-3 md:flex mb-6">
-            <div class="md:w-full px-3">
-                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-password">
-                Email
-                </label>
-                <input v-model="form.email" name="email" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" id="grid-password" type="text" placeholder="jean.marc@dxc.com">
-                <p class="text-red-400 text-xs italic mt-1" v-if="form.errors.email">{{form.errors.email}}</p>
-
-            </div>
-        </div> -->
         <div class="-mx-3 md:flex mb-6">
                 <div class="md:w-full px-3">
                     <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-first-name">
@@ -43,8 +33,8 @@ const create = () => form.post(route('version.index'));
         
         <div>
             <button
-                class="bg-indigo-600 text-white font-medium p-2 rounded-md"
-                type="Submit"
+            class=" mt-6 inline-flex px-5 py-3 text-white bg-blue-600 hover:bg-blue-700 focus:bg-blue-700 rounded-md mb-3"
+            type="Submit"
             >
                 Create
             </button>

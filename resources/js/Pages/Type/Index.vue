@@ -164,7 +164,7 @@ defineProps({
                                     <Link :href="route('type.show',{type:type.id})"  as="button"  class="bg-purple-600 hover:bg-indigo-500 text-white font-medium p-2 rounded-md">
                                             Show </Link>
                                    <Link :href="route('type.edit',{type:type.id})"  class="bg-indigo-600 mx-3 hover:bg-indigo-500 text-white font-medium p-2 rounded-md">
-                                    Edite </Link>
+                                    Edit </Link>
                                     
                                    <!-- <Link :href="`/type/${type.id}`" method="DELETE" as="button">
                                     Delete</Link> -->
