@@ -17,7 +17,7 @@
                 class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
               />
 
-              <div class="text-red-400 text-xs mt-1" v-if="form.errors.email">
+              <div class="text-red-400 text-xs mt-1 italic" v-if="form.errors.email">
                 {{ form.errors.email }}
               </div>
              
@@ -33,7 +33,7 @@
                 class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
               />
 
-              <div class="text-red-400 text-xs mt-1" v-if="form.errors.password">
+              <div class="text-red-400 text-xs mt-1 italic" v-if="form.errors.password">
                 {{ form.errors.password }}
               </div>
             </div>

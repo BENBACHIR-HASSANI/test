@@ -48,7 +48,7 @@ import { Link } from "@inertiajs/vue3";
                         </li>
                         <li class="min-w-max">
                             <Link
-                                :href="route('user')"
+                                :href="route('user.index')"
                                 class="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600"
                             >
                                 <svg

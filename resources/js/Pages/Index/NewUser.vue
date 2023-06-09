@@ -1,7 +1,6 @@
 <script setup>
 import { Link, useForm } from "@inertiajs/vue3";
 const form = useForm({
-  name: null,
   first_name: null,
   last_name: null,
   trigramme_user: null,

@@ -8,7 +8,7 @@ defineProps({
 <span>
     {{ version.name }},
     {{ version.prefix }}
-         
+          
 </span>
    
 </template>

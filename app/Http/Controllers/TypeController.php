@@ -50,7 +50,7 @@ class TypeController extends Controller
             'name'=>'required',]));
             // Type::create($request->all());
 
-        return redirect()->route('type.index')->with('success','Type was created');
+        return redirect()->route('type.index')->with('success','Type was created successfully!');
     }
 
     /**
@@ -93,13 +93,13 @@ class TypeController extends Controller
         ])
     );
         return redirect()->route('type.index')
-        ->with('success', 'type was change !');
+        ->with('success', 'Type was updated successfully!');
     }
 
   
     public function destroy(Type $type)
     {
         $type->delete();
-        return redirect()->back()->with('success','Type waas deleted!');
+        return redirect()->back()->with('success','Type waas deleted successfully!');
     }
 }

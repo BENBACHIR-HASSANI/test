@@ -25,7 +25,7 @@ import { Link } from "@inertiajs/vue3";
       <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-password">
         Table
       </label>
-      <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" id="grid-password" type="password" placeholder="******************">
+      <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" id="grid-password" type="text" placeholder="">
       <p class="text-grey-dark text-xs italic">Make it as long and as crazy as you'd like</p>
     </div>
   </div>
@@ -36,9 +36,9 @@ import { Link } from "@inertiajs/vue3";
       </label>
       <div class="relative">
         <select class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="grid-state">
-          <option>FHHD1</option>
-          <option>Missouri</option>
-          <option>Texas</option>
+          <option>FHHD101</option>
+          <option>FHHD102</option>
+          <option>FHHD103</option>
         </select>
       
       </div>

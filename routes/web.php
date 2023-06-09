@@ -34,8 +34,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/environement', [WelcomeController::class, 'environement'])->name('environement')->middleware('auth.inertia');
     Route::get('/test', [WelcomeController::class, 'test'])->name('test')->middleware('auth.inertia');
     Route::get('/profil', [WelcomeController::class, 'userprofil'])->name('profil')->middleware('auth.inertia');
-    Route::get('/user', [WelcomeController::class, 'user'])->name('user')->middleware('auth.inertia');
-    Route::get('/NewUser', [UserController::class, 'create'])->name('create')->middleware('auth.inertia');
+    // Route::get('/user', [WelcomeController::class, 'user'])->name('user')->middleware('auth.inertia');
+    // Route::get('/NewUser', [UserController::class, 'create'])->name('create')->middleware('auth.inertia');
     Route::get('/forms', [WelcomeController::class, 'forms'])->name('forms')->middleware('auth.inertia');
     Route::get('/dashboard', [WelcomeController::class, 'dashboard'])->name('dashboard')->middleware(['auth', 'verified']);
     Route::get('/migration', [WelcomeController::class, 'migration'])->name('migration')->middleware('auth.inertia');
@@ -44,5 +44,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('type', TypeController::class)->middleware('auth.inertia');
     Route::resource('version', VersionController::class)->middleware('auth.inertia');
     Route::resource('env_source', Env_sourceController::class)->middleware('auth.inertia');
+    Route::resource('user', UserController::class)->middleware('auth.inertia');
+
 });
 Route::post('/logout', [AuthController::class, 'destroy'])->name('logout');

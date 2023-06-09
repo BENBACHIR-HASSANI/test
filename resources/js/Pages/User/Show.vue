@@ -1,14 +1,14 @@
 <script setup>
-import VersionElement from "../../composants/VersionElement.vue";
+import UsersElement from "../../composants/UsersElement.vue";
 
 // import {Link} from '@inertiajs/vue3'
 defineProps({
-    version: Object,
+    user: Object,
 });
 </script>
 <template>
 <div>
-  <VersionElement :version="version"/>
+  <UsersElement :user="user"/>
          
 </div>
    

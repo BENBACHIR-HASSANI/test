@@ -54,7 +54,7 @@ class Env_sourceController extends Controller
          ]));
          // env_source::create($request->all());
  
-         return redirect()->route('env_source.index')->with('success', 'env_source was created');
+         return redirect()->route('env_source.index')->with('success', 'env_source was created successfully!');
      }
  
      /**
@@ -100,13 +100,13 @@ class Env_sourceController extends Controller
              ])
          );
          return redirect()->route('env_source.index')
-             ->with('success', 'env_source was change !');
+             ->with('success', 'env_source was updated successfully!');
      }
  
  
      public function destroy(Env_source $env_source)
      {
          $env_source->delete();
-         return redirect()->back()->with('success', 'env_source was deleted!');
+         return redirect()->back()->with('success', 'env_source was deleted successfully!');
      }
  }

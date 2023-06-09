@@ -161,14 +161,14 @@ defineProps({
                                 >
                                    <!-- <Link :href="`/version/${version.id}/edit`">
                                     Edite </Link> -->
-                                    <Link :href="route('version.show',{version:version.id})"  as="button"  class="bg-purple-600 hover:bg-indigo-500 text-white font-medium p-2 rounded-md">
+                                    <Link :href="route('version.show',{version:version.id})"  as="button"  class="bg-purple-600 hover:purple-500 text-white font-medium p-2 rounded-md">
                                     Show</Link>
                                    <Link :href="route('version.edit',{version:version.id})"  class="bg-indigo-600 mx-3 hover:bg-indigo-500 text-white font-medium p-2 rounded-md">
-                                    Edite </Link>
+                                    Edit </Link>
                                     
                                    <!-- <Link :href="`/version/${version.id}`" method="DELETE" as="button">
                                     Delete</Link> -->
-                                   <Link :href="route('version.destroy',{version:version.id})" method="DELETE" as="button"  class="bg-red-600 hover:bg-indigo-500 text-white font-medium p-2 rounded-md">
+                                   <Link :href="route('version.destroy',{version:version.id})" method="DELETE" as="button"  class="bg-red-600 hover:red-500 text-white font-medium p-2 rounded-md">
                                     Delete</Link>
                                    
                                 </td>

@@ -11,7 +11,7 @@ import {  Link } from "@inertiajs/vue3";
         
         <!-- user name-->
    
-       <Link :href="route('profil')" class="text-md font-medium " v-if="$page.props.user.name"><span>{{ $page.props.user.name }}</span></Link>
+       <Link :href="route('profil')" class="text-md font-medium " v-if="$page.props.user"><span>{{ $page.props.user.first_name }} {{ $page.props.user.last_name }}</span></Link>
           
          
          

@@ -52,7 +52,7 @@ class VersionController extends Controller
         ]));
         // version::create($request->all());
 
-        return redirect()->route('version.index')->with('success', 'version was created');
+        return redirect()->route('version.index')->with('success', 'Version was created successfully!');
     }
 
     /**
@@ -98,13 +98,13 @@ class VersionController extends Controller
             ])
         );
         return redirect()->route('version.index')
-            ->with('success', 'version was change !');
+            ->with('success', 'Version was updated successfully!');
     }
 
 
     public function destroy(Version $version)
     {
         $version->delete();
-        return redirect()->back()->with('success', 'version was deleted!');
+        return redirect()->back()->with('success', 'Version was deleted successfully!');
     }
 }
