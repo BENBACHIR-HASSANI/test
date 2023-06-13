@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('env_sources', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->timestamps();
         });
     }
 

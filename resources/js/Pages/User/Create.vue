@@ -24,14 +24,14 @@ const create = () => form.post(route('user.index'));
        <div class="-mx-3 md:flex mb-6">
        <div class="md:w-1/2 px-3 mb-6 md:mb-0">
          <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-first-name">
-          First name
+          Prénom
          </label>
          <input v-model="form.first_name" name="first_name" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Jean">
          <p class="text-red-400 text-xs italic mt-1" v-if="form.errors.first_name">{{form.errors.first_name}}</p>
        </div>
        <div class="md:w-1/2 px-3">
          <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
-           Last name
+           Nom
          </label>
          <input v-model="form.last_name" name="last_name" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="Marc">
          <p class="text-red-400 text-xs italic mt-1" v-if="form.errors.last_name">{{form.errors.last_name}}</p>
@@ -41,7 +41,7 @@ const create = () => form.post(route('user.index'));
      <div class="-mx-3 md:flex mb-6">
        <div class="md:w-full px-3">
          <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-password">
-           Email
+           Adresse mail
          </label>
          <input v-model="form.email" name="email" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" id="grid-password" type="text" placeholder="jean.marc@dxc.com">
          <p class="text-red-400 text-xs italic mt-1" v-if="form.errors.email">{{form.errors.email}}</p>
@@ -51,14 +51,14 @@ const create = () => form.post(route('user.index'));
      <div class="-mx-3 md:flex mb-6">
        <div class="md:w-1/2 px-3 mb-6 md:mb-0">
          <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-first-name">
-          Password
+          Mot de passe
          </label>
          <input v-model="form.password" name="password" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="grid-first-name" type="password" placeholder="****************">
          <p class="text-red-400 text-xs italic mt-1" v-if="form.errors.password">{{form.errors.password}}</p>
        </div>
        <div class="md:w-1/2 px-3">
          <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
-           Confirm password
+           Confirmer le mot de passe
          </label>
          <input v-model="form.confirm_password" name="confirm_password" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="password" placeholder="****************">
          <p class="text-red-400 text-xs italic mt-1" v-if="form.errors.confirm_password">{{form.errors.confirm_password}}</p>
@@ -67,7 +67,7 @@ const create = () => form.post(route('user.index'));
      <div class="-mx-3 md:flex mb-6">
        <div class="md:w-1/2 px-3 mb-6 md:mb-0">
          <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-first-name">
-          Trigram
+          Trigramme
          </label>
          <input v-model="form.trigramme_user" name="trigramme_user" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="JMC">
          <p class="text-red-400 text-xs italic mt-1" v-if="form.errors.trigramme_user">{{form.errors.trigramme_user}}</p>
@@ -85,13 +85,13 @@ const create = () => form.post(route('user.index'));
      <div class="-mx-3 md:flex mb-6">
        <div class="md:w-1/2 px-3 mb-6 md:mb-0">
            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-state">
-           Role
+           Rôle
          </label>
          <div class="relative">
            <select v-model="form.role" name="role" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded" id="grid-state" >
-             <option value="Administrator">Administrator</option>
-             <option>Integration manager</option>
-             <option>Developer</option>
+             <option value="Administrator">Administrateur</option>
+             <option>Responsable d'intégration</option>
+             <option>Développeur</option>
            </select>
        </div>
          <p class="text-red-400 text-xs italic mt-1" v-if="form.errors.role">{{form.errors.role}}</p>
@@ -99,7 +99,7 @@ const create = () => form.post(route('user.index'));
        </div>
        <div class="md:w-1/2 px-3">
          <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
-           Phone number
+            Numéro de téléphone
          </label>
          <input v-model="form.tel" name="tel" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="00 33 7 67 65 67 97">
          <p class="text-red-400 text-xs italic mt-1" v-if="form.errors.tel">{{form.errors.tel}}</p>
@@ -107,7 +107,7 @@ const create = () => form.post(route('user.index'));
        </div>
      </div>
      <button type="Submit" class=" mt-6 inline-flex px-5 py-3 text-white bg-blue-600 hover:bg-blue-700 focus:bg-blue-700 rounded-md mb-3">
-       Create
+       Créer
      </button>
      <!-- <Link href="../user" class=" mt-6 inline-flex px-5 py-3 text-white bg-purple-600 hover:bg-purple-700 focus:bg-purple-700 rounded-md ml-6 mb-3">     
        Cancel

@@ -8,7 +8,7 @@ defineProps({
 <template>
 <span>
    
-    {{ user.first_name }},
+    {{ user.first_name }}
     {{ user.last_name }},
     {{ user.trigramme_user }},
     {{ user.email }},
@@ -17,6 +17,8 @@ defineProps({
     {{ user.confirm_password }},
     {{ user.tel }},
     {{ user.role }}
+
+    
          
 </span>
    

@@ -1,7 +1,8 @@
 <script setup>
 import {Link} from '@inertiajs/vue3'
+import Pagination from "../../composants/Pagination.vue"
 defineProps({
-    user: Array,
+    user: Object,
 });
 </script>
 
@@ -9,7 +10,7 @@ defineProps({
     <div class="w-96 h-full rounded-lg  flex-grow">
      <div class="flex flex-col space-y-6 md:space-y-0 md:flex-row justify-between">
            <div class="mr-6">
-             <h1 class="text-4xl font-semibold mb-2">Users</h1>
+             <h1 class="text-4xl font-semibold mb-2">Utilisateurs</h1>
            </div>
            <div class="flex flex-wrap items-start justify-end -mb-3">
              
@@ -17,7 +18,7 @@ defineProps({
                <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="flex-shrink-0 h-6 w-6 text-white -ml-1 mr-2">
                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                </svg>
-               Create new user
+               Ajouter
              </Link>
            </div>
          </div>
@@ -76,12 +77,12 @@ defineProps({
                                  <th
                                     scope="col"
                                     class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                     Name
+                                     Nom complet
                                  </th>
                                  <th
                                     scope="col"
                                     class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                     Email
+                                     Adresse mail
                                  </th>
                                  <th
                                     scope="col"
@@ -91,7 +92,7 @@ defineProps({
                                  <th
                                     scope="col"
                                     class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                     Role
+                                     Rôle
                                  </th>
                                  <th
                                     scope="col"
@@ -109,7 +110,7 @@ defineProps({
                              </tr>
                          </thead>
                          <tbody>
-                             <tr v-for="user in user" :key="user.id">
+                             <tr v-for="user in user.data" :key="user.id">
                                  <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                      <div class="flex items-center">
                                          <!-- <div class="flex-shrink-0 w-10 h-10">
@@ -162,14 +163,14 @@ defineProps({
                                    <!-- <Link :href="`/user/${user.id}/edit`">
                                     Edite </Link> -->
                                     <Link :href="route('user.show',{user:user.id})" as="button" class="bg-purple-600 hover:bg-purple-500 text-white font-medium p-2 rounded-md">
-                                    Show</Link>
+                                    Afficher</Link>
                                    <Link :href="route('user.edit',{user:user.id})" as="button" class="bg-indigo-600 mx-3 hover:bg-indigo-500 text-white font-medium p-2 rounded-md">
-                                    Edit </Link>
+                                    Modifier </Link>
                                     
                                    <!-- <Link :href="`/user/${user.id}`" method="DELETE" as="button">
                                     Delete</Link> -->
                                    <Link :href="route('user.destroy',{user:user.id})" method="DELETE" as="button"  class="bg-red-600 hover:bg-red-500 text-white font-medium p-2 rounded-md">
-                                    Delete</Link>
+                                    Supprimer</Link>
                                    
                                 </td>
                                  <!-- <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
@@ -210,6 +211,12 @@ defineProps({
                  </div>
              </div>
          </div>
+               <!-- pagination -->
+               <div v-if="user.data.length"
+                 class="w-full flex justify-center mt-8 mb-8">
+<Pagination :links="user.links"/>
+
+</div>
      </div>
  
  

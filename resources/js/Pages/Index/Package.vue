@@ -7,7 +7,7 @@ import { Link } from "@inertiajs/vue3";
             class="flex flex-col space-y-6 md:space-y-0 md:flex-row justify-between"
         >
             <div class="mr-6">
-                <h1 class="text-4xl font-semibold mb-2">Packages</h1>
+                <h1 class="text-4xl font-semibold mb-2">Paquets</h1>
             </div>
         </div>
 
@@ -97,7 +97,7 @@ import { Link } from "@inertiajs/vue3";
                         d="M12 6v6m0 0v6m0-6h6m-6 0H6"
                     />
                 </svg>
-                New Package
+                Ajouter
             </Link>
         </div>
 
@@ -105,15 +105,15 @@ import { Link } from "@inertiajs/vue3";
             <table class="w-full text-xs">
                 <thead class="dark:bg-gray-700">
                     <tr class="text-left">
-                        <th class="p-3">Ref</th>
+                        <th class="p-3">Réf</th>
                         <th class="p-3">Nom</th>
                         <th class="p-3">Type</th>
                         <th class="p-3">QC</th>
-                        <th class="p-3">version</th>
+                        <th class="p-3">Version</th>
                         <th class="p-3">CSR</th>
                         <th class="p-3">Date</th>
                         <th class="p-3">Env Source</th>
-                        <th class="p-3">projet</th>
+                        <th class="p-3">Projet</th>
                         <th class="p-3">Status</th>
                     </tr>
                 </thead>

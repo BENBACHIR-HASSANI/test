@@ -25,6 +25,7 @@ use App\Http\Controllers\UserController;
 // });
 
 Route::get('/login', [AuthController::class, 'create'])->name('login');
+// Route::get('/', [AuthController::class, 'create'])->name('login');
 Route::post('/login', [AuthController::class, 'store'])->name('login.store');
 // Route::get('/register', [WelcomeController::class, 'register'])->middleware('auth.inertia');
 Route::get('/forgotPassword', [ForgotPasswordController::class, 'show'])->name('forgot-password');
@@ -40,11 +41,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [WelcomeController::class, 'dashboard'])->name('dashboard')->middleware(['auth', 'verified']);
     Route::get('/migration', [WelcomeController::class, 'migration'])->name('migration')->middleware('auth.inertia');
     Route::get('/package', [WelcomeController::class, 'package'])->name('package')->middleware('auth.inertia');
-    // Route::resource('env', Env_sourceController::class)->only(['index', 'create', 'store'])->middleware('auth.inertia');
     Route::resource('type', TypeController::class)->middleware('auth.inertia');
     Route::resource('version', VersionController::class)->middleware('auth.inertia');
     Route::resource('env_source', Env_sourceController::class)->middleware('auth.inertia');
     Route::resource('user', UserController::class)->middleware('auth.inertia');
 
+
+
 });
+// Route::resource('/env', WelcomeController::class)->only(['index', 'create', 'store']);
+
 Route::post('/logout', [AuthController::class, 'destroy'])->name('logout');

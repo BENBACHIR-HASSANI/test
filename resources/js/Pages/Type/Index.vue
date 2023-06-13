@@ -1,7 +1,9 @@
 <script setup>
 import {Link} from '@inertiajs/vue3'
+import Pagination from "../../composants/Pagination.vue"
 defineProps({
-    type: Array,
+    type: Object,
+    filters:Object
 });
 </script>
 <template>
@@ -10,7 +12,7 @@ defineProps({
                     class="flex flex-col space-y-6 md:space-y-0 md:flex-row justify-between"
                 >
                     <div class="mr-6">
-                        <h1 class="text-4xl font-semibold mb-2">Types</h1>
+                        <h1 class="text-4xl font-semibold mb-2">Type</h1>
                     </div>
                     <div class="flex flex-wrap items-start justify-end -mb-3">
             <Link
@@ -31,12 +33,13 @@ defineProps({
                         d="M12 6v6m0 0v6m0-6h6m-6 0H6"
                     />
                 </svg>
-                New Type
+                Ajouter
             </Link>
         </div>
                 </div>
+                <Filter :filters="filters"/>
 
-                <div class="my-2 flex sm:flex-row flex-col">
+                 <!-- <div class="my-2 flex sm:flex-row flex-col">
                     <div class="flex flex-row mb-1 sm:mb-0">
                         <div class="relative">
                             <select
@@ -101,7 +104,7 @@ defineProps({
                             class="appearance-none rounded-r rounded-l sm:rounded-l-none border border-gray-400 border-b block pl-8 pr-6 py-2 w-full bg-white text-sm placeholder-gray-400 text-gray-700 focus:bg-white focus:placeholder-gray-600 focus:text-gray-700 focus:outline-none"
                         />
                     </div>
-                </div>
+                </div> -->
                 <div class="overflow-hidden">
                     <table class="min-w-full">
                         <thead class="bg-white border-b">
@@ -110,7 +113,7 @@ defineProps({
                                     scope="col"
                                     class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                                 >
-                                    Type Name
+                                    Nom
                                 </th>
                                 <th
                                     scope="col"
@@ -136,7 +139,7 @@ defineProps({
                         <tbody>
                             <tr
                                 class="bg-gray-100 border-b"
-                                v-for="type in type"
+                                v-for="type in type.data"
                                 :key="type.id" >
                                 <td
                                     class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
@@ -162,14 +165,14 @@ defineProps({
                                    <!-- <Link :href="`/type/${type.id}/edit`">
                                     Edite </Link> -->
                                     <Link :href="route('type.show',{type:type.id})"  as="button"  class="bg-purple-600 hover:bg-indigo-500 text-white font-medium p-2 rounded-md">
-                                            Show </Link>
+                                            Afficher </Link>
                                    <Link :href="route('type.edit',{type:type.id})"  class="bg-indigo-600 mx-3 hover:bg-indigo-500 text-white font-medium p-2 rounded-md">
-                                    Edit </Link>
+                                    Modifier </Link>
                                     
                                    <!-- <Link :href="`/type/${type.id}`" method="DELETE" as="button">
                                     Delete</Link> -->
                                    <Link :href="route('type.destroy',{type:type.id})" method="DELETE" as="button"  class="bg-red-600 hover:bg-indigo-500 text-white font-medium p-2 rounded-md">
-                                    Delete</Link>
+                                    Supprimer</Link>
                                    
                                 </td>
                             
@@ -177,6 +180,12 @@ defineProps({
                         </tbody>
                     </table>
                 </div>
+                       <!-- pagination -->
+                       <div v-if="type.data.length" class="w-full flex justify-center mt-8 mb-8">
+                        <Pagination :links="type.links"/>
+
+</div>
+       
             </div>
       
 </template>
@@ -184,8 +193,9 @@ defineProps({
 <script>
 import IndexLayout from "../../Layouts/IndexLayout.vue";
 import TypeElement from '../../composants/TypeElement.vue';
+import Filter from './Composant/Filter.vue';
 export default {
     layout: IndexLayout,
-    components: { TypeElement }
+    components: { TypeElement ,Filter }
 };
 </script>

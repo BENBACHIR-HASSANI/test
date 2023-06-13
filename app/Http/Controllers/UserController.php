@@ -19,7 +19,8 @@ class UserController extends Controller
         return inertia(
             'User/Index',
             [
-                'user' => User::all()
+                'user' => User::orderByDesc('created_at')
+                ->paginate(5)
 
 
 
@@ -61,7 +62,7 @@ class UserController extends Controller
         ]));
         // User::create($request->all());
 
-        return redirect()->route('user.index')->with('success', 'User was created successfully!');
+        return redirect()->route('user.index')->with('success', 'Utilisateur a été créé avec succès!');
     }
 
     /**
@@ -114,13 +115,13 @@ class UserController extends Controller
             ])
         );
         return redirect()->route('user.index')
-        ->with('success', 'User was updated successfully!');
+        ->with('success', 'Utilisateur a été modifié avec succès!');
     }
 
 
     public function destroy(User $user)
     {
         $user->delete();
-        return redirect()->back()->with('success', 'User was deleted successfully!');
+        return redirect()->back()->with('success', 'Utilisateur a été supprimé avec succès!');
     }
 }

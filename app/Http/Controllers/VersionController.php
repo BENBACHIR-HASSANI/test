@@ -17,7 +17,8 @@ class VersionController extends Controller
         return inertia(
             'Version/Index',
             [
-                'version' => Version::all()
+                'version' => Version::orderByDesc('created_at')
+                ->paginate(5)
 
 
 
@@ -52,7 +53,7 @@ class VersionController extends Controller
         ]));
         // version::create($request->all());
 
-        return redirect()->route('version.index')->with('success', 'Version was created successfully!');
+        return redirect()->route('version.index')->with('success', 'Version a été créé avec succès!');
     }
 
     /**
@@ -98,13 +99,13 @@ class VersionController extends Controller
             ])
         );
         return redirect()->route('version.index')
-            ->with('success', 'Version was updated successfully!');
+            ->with('success', 'Version a été mis à jour avec succès!');
     }
 
 
     public function destroy(Version $version)
     {
         $version->delete();
-        return redirect()->back()->with('success', 'Version was deleted successfully!');
+        return redirect()->back()->with('success', 'Version a été supprimé avec succès!');
     }
 }

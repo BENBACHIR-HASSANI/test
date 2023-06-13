@@ -1,7 +1,8 @@
 <script setup>
 import {Link} from '@inertiajs/vue3'
+import Pagination from "../../composants/Pagination.vue"
 defineProps({
-    version: Array,
+    version:Object,
 });
 </script>
 <template>
@@ -31,7 +32,7 @@ defineProps({
                         d="M12 6v6m0 0v6m0-6h6m-6 0H6"
                     />
                 </svg>
-                New version
+                Ajouter
             </Link>
         </div>
                 </div>
@@ -110,7 +111,7 @@ defineProps({
                                     scope="col"
                                     class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                                 >
-                                    version Name
+                                    Nom
                                 </th>
                                 <th
                                     scope="col"
@@ -136,7 +137,7 @@ defineProps({
                         <tbody>
                             <tr
                                 class="bg-gray-100 border-b"
-                                v-for="version in version"
+                                v-for="version in version.data"
                                 :key="version.id" >
                                 <td
                                     class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
@@ -162,14 +163,14 @@ defineProps({
                                    <!-- <Link :href="`/version/${version.id}/edit`">
                                     Edite </Link> -->
                                     <Link :href="route('version.show',{version:version.id})"  as="button"  class="bg-purple-600 hover:purple-500 text-white font-medium p-2 rounded-md">
-                                    Show</Link>
+                                    Afficher</Link>
                                    <Link :href="route('version.edit',{version:version.id})"  class="bg-indigo-600 mx-3 hover:bg-indigo-500 text-white font-medium p-2 rounded-md">
-                                    Edit </Link>
+                                    Modifier </Link>
                                     
                                    <!-- <Link :href="`/version/${version.id}`" method="DELETE" as="button">
                                     Delete</Link> -->
                                    <Link :href="route('version.destroy',{version:version.id})" method="DELETE" as="button"  class="bg-red-600 hover:red-500 text-white font-medium p-2 rounded-md">
-                                    Delete</Link>
+                                    Supprimer</Link>
                                    
                                 </td>
                             
@@ -177,6 +178,12 @@ defineProps({
                         </tbody>
                     </table>
                 </div>
+                           <!-- pagination -->
+                           <div v-if="version.data.length"
+                 class="w-full flex justify-center mt-8 mb-8">
+<Pagination :links="version.links"/>
+
+</div>
             </div>
      
 </template>

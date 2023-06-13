@@ -32,7 +32,7 @@ class AuthController extends Controller
 
         $request->session()->regenerate();
         return redirect()->intended('/dashboard')
-        ->with('success', 'Administrator is Logged in successfully!');
+        ->with('success', "L'administrateur est connecté avec succès!");
         
 
     }

@@ -12,16 +12,38 @@ class TypeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
+   
     {
-        return inertia('Type/Index',
-        [
-            'type'=>Type::all()
-
-
+        $filters = $request->only([
+            'name'
 
         ]);
-            
+        // $query=Env_source::all();
+        $query = Type::orderByDesc('created_at');
+
+        if ($filters['name'] ?? false) {
+            $query->where('name', $filters['name']);
+        }
+
+
+        return inertia(
+            'Type/Index',
+            [
+                'filters' => $filters,
+                'type' => $query->paginate(5)
+                    ->withQueryString(),
+               
+
+
+
+
+
+
+
+
+            ]
+        );
     }
 
     /**
@@ -50,7 +72,7 @@ class TypeController extends Controller
             'name'=>'required',]));
             // Type::create($request->all());
 
-        return redirect()->route('type.index')->with('success','Type was created successfully!');
+        return redirect()->route('type.index')->with('success','Type a été créé avec succès!');
     }
 
     /**
@@ -93,13 +115,13 @@ class TypeController extends Controller
         ])
     );
         return redirect()->route('type.index')
-        ->with('success', 'Type was updated successfully!');
+        ->with('success', 'Type a été mis à jour avec succès!');
     }
 
   
     public function destroy(Type $type)
     {
         $type->delete();
-        return redirect()->back()->with('success','Type waas deleted successfully!');
+        return redirect()->back()->with('success','Type a été supprimé avec succès!');
     }
 }

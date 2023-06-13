@@ -18,10 +18,10 @@ import { Link } from "@inertiajs/vue3";
                 <table class="w-full text-xs">
                     <thead class="dark:bg-gray-700">
                         <tr class="text-left">
-                            <th class="p-3">Env d'integration</th>
+                            <th class="p-3">Environnement d'integration</th>
                             <th class="p-3">Statut</th>
                             <th class="p-3">CSR ID</th>
-                            <th class="p-3">Developpeur</th>
+                            <th class="p-3">Développeur</th>
                           
                         </tr>
                     </thead>

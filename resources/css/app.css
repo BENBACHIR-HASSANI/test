@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.input-filter-l {
+    @apply placeholder:text-purple-400 dark:placeholder:text-purple-600 border border-purple-200 dark:border-purple-700 rounded-t-md rounded-l-md rounded-b-md rounded-r-none text-sm font-medium text-purple-600 dark:text-purple-400 dark:bg-purple-800
+  }
+
+  .input-filter-r {
+    @apply placeholder:text-purple-400 dark:placeholder:text-purple-600 border border-l-0 border-purple-200 dark:border-purple-700 rounded-t-md rounded-l-none rounded-b-md rounded-r-md text-sm font-medium text-purple-600 dark:text-purple-400 dark:bg-purple-800
+  }
+
+  .btn-normal {
+    @apply bg-purple-600 hover:bg-purple-500 text-white font-medium p-1 mx-2 rounded-md
+  }
+  .btn-primary {
+    @apply bg-indigo-600 hover:bg-indigo-500 text-white font-medium p-1 mx-2 rounded-md
+  }
