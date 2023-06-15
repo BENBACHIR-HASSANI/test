@@ -93,7 +93,7 @@ import { Link } from "@inertiajs/vue3";
                                     />
                                 </svg>
                                 <span class="group-hover:text-gray-700"
-                                    >Paquet</span
+                                    >Package</span
                                 >
                             </Link>
                             <div class="pt-2 pl-4">
@@ -104,21 +104,21 @@ import { Link } from "@inertiajs/vue3";
                                         <Link
                                             :href="route('type.index')"
                                             class="inline-block w-full px-4 py-2 text-xs rounded hover:bg-purple-600 hover:text-white focus:outline-none     "
-                                            >Type</Link
+                                            >Types</Link
                                         >
                                     </li>
                                     <li>
                                         <Link
                                             href="#"
                                             class="inline-block w-full px-4 py-2 text-xs rounded hover:bg-purple-600 hover:text-white focus:outline-none     "
-                                            >Table</Link
+                                            >Tables</Link
                                         >
                                     </li>
                                     <li>
                                         <Link
                                         :href="route('version.index')"
                                             class="inline-block w-full px-4 py-2 text-xs rounded hover:bg-purple-600 hover:text-white focus:outline-none     "
-                                            >Version</Link
+                                            >Versions</Link
                                         >
                                     </li>
                                     <li>

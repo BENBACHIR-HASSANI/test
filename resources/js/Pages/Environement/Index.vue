@@ -96,14 +96,14 @@ defineProps({
                                 >
                                    <!-- <Link :href="`/env_source/${env_source.id}/edit`">
                                     Edite </Link> -->
-                                    <Link :href="route('env_source.show',{env_source:env_source.id})" as="button"  class="bg-purple-600 hover:bg-indigo-500 text-white font-medium p-2 rounded-md">
-                                            Afficher </Link>
+                                    <!--<Link :href="route('env_source.show',{env_source:env_source.id})" as="button"  class="bg-purple-600 hover:bg-indigo-500 text-white font-medium p-2 rounded-md">
+                                            Afficher </Link>-->
                                    <Link :href="route('env_source.edit',{env_source:env_source.id})"  class="bg-indigo-600 mx-3 hover:bg-indigo-500 text-white font-medium p-2 rounded-md">
                                     Modifier </Link>
                                     
                                    <!-- <Link :href="`/env_source/${env_source.id}`" method="DELETE" as="button">
                                     Delete</Link> -->
-                                   <Link :href="route('env_source.destroy',{env_source:env_source.id})" method="DELETE" as="button"  class="bg-red-600 hover:bg-indigo-500 text-white font-medium p-2 rounded-md">
+                                   <Link :href="route('env_source.destroy',{env_source:env_source.id})" method="DELETE" as="button"  class="bg-red-600 hover:red-500 text-white font-medium p-2 rounded-md">
                                     Supprimer</Link>
                                    
                                 </td>

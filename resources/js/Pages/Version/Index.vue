@@ -162,8 +162,8 @@ defineProps({
                                 >
                                    <!-- <Link :href="`/version/${version.id}/edit`">
                                     Edite </Link> -->
-                                    <Link :href="route('version.show',{version:version.id})"  as="button"  class="bg-purple-600 hover:purple-500 text-white font-medium p-2 rounded-md">
-                                    Afficher</Link>
+                                    <!--<Link :href="route('version.show',{version:version.id})"  as="button"  class="bg-purple-600 hover:purple-500 text-white font-medium p-2 rounded-md">
+                                    Afficher</Link>-->
                                    <Link :href="route('version.edit',{version:version.id})"  class="bg-indigo-600 mx-3 hover:bg-indigo-500 text-white font-medium p-2 rounded-md">
                                     Modifier </Link>
                                     

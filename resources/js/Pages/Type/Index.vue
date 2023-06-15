@@ -12,7 +12,7 @@ defineProps({
                     class="flex flex-col space-y-6 md:space-y-0 md:flex-row justify-between"
                 >
                     <div class="mr-6">
-                        <h1 class="text-4xl font-semibold mb-2">Type</h1>
+                        <h1 class="text-4xl font-semibold mb-2">Types</h1>
                     </div>
                     <div class="flex flex-wrap items-start justify-end -mb-3">
             <Link
@@ -164,14 +164,14 @@ defineProps({
                                 >
                                    <!-- <Link :href="`/type/${type.id}/edit`">
                                     Edite </Link> -->
-                                    <Link :href="route('type.show',{type:type.id})"  as="button"  class="bg-purple-600 hover:bg-indigo-500 text-white font-medium p-2 rounded-md">
-                                            Afficher </Link>
+                                    <!--<Link :href="route('type.show',{type:type.id})"  as="button"  class="bg-purple-600 hover:bg-indigo-500 text-white font-medium p-2 rounded-md">
+                                            Afficher </Link>-->
                                    <Link :href="route('type.edit',{type:type.id})"  class="bg-indigo-600 mx-3 hover:bg-indigo-500 text-white font-medium p-2 rounded-md">
                                     Modifier </Link>
                                     
                                    <!-- <Link :href="`/type/${type.id}`" method="DELETE" as="button">
                                     Delete</Link> -->
-                                   <Link :href="route('type.destroy',{type:type.id})" method="DELETE" as="button"  class="bg-red-600 hover:bg-indigo-500 text-white font-medium p-2 rounded-md">
+                                   <Link :href="route('type.destroy',{type:type.id})" method="DELETE" as="button"  class="bg-red-600 hover:red-500 text-white font-medium p-2 rounded-md">
                                     Supprimer</Link>
                                    
                                 </td>
